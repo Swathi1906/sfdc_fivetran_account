@@ -1,12 +1,22 @@
 version: 2
 
 sources:
-  - name: salesforce #It would be best to keep this named salesforce
+  - name: sfdc_fivetran_account #It would be best to keep this named salesforce
     schema: 'sfdc_fivetran_account' #Modify this to be where your Salesforce data resides
     tables:
       - name: fivetran_formula_model
         description: Used for the recommended Option 1 version of the formula solution.
       - name: fivetran_formula
         description: Used for options 2 and 2 of the original individual formula solution.
-      - name: account_view
+      - name: account
         description: Used for acount object.
+        
+models:
+  - name: account_view
+    description: "A account dbt model"
+    columns:
+      - name: id
+        description: "The primary key for this table"
+        tests:
+          - unique
+          - not_null
