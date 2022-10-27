@@ -1,0 +1,19 @@
+Formulae_Fields:
+  target: dev
+  outputs:
+    dev:
+      account: netapp_prod.west-us-2.azure
+      database: D05_ODS_DB
+      password: password123
+      role: FIVETRAN_ROLE
+      schema: sfdc_fivetran_account
+      threads: 10
+      type: snowflake
+      user: FIVETRAN_USER
+      warehouse: FIVETRAN_WAREHOUSE
+      connect_retries: 3  # default 0
+      connect_timeout: 20 # default: 10
+      retry_on_database_errors: True # default: false 
+      retry_all: True  # default: false
+
+
